@@ -1,0 +1,39 @@
+<form class="my-2" #person="ngForm" (ngSubmit)="submit(person)">
+    <div class="form-group">
+        <label for="personName">name</label>
+        <input required ngModel pattern="banana" minlength="3" maxlength="15" placeholder="name" [(ngModel)]="model.name" name="personName" #controlObj="ngModel" class="form-control" id="personName" (change)="log(controlObj)" type="text">
+
+        <div class=" alert alert-danger " *ngIf="controlObj.touched && !controlObj.valid ">
+            <div *ngIf="controlObj.errors.required ">FirstName is required</div>
+            <div *ngIf="controlObj.errors.minlength ">minlength is {{controlObj.errors.minlength.requiredLength}} characters</div>
+            <div *ngIf="controlObj.errors.pattern">firstName doesn't matched the pattern</div>
+        </div>
+    </div>
+
+    <div ngModelGroup="city" #city="ngModelGroup">
+
+        <div class="form-group ">
+            <label for="personCity ">city</label>
+            <input [(ngModel)]="model.city " #controlObjRef='ngModel' name="personCity " class="form-control " type="text " id="personCity " minlength="3" pattern="[a-zA-Z ]*" />
+            <!-- <div class="alert alert-danger " *ngIf="controlObjRef.touched && !controlObjRef.valid ">
+                <div *ngIf="controlObjRef.errors.required ">city is required</div>
+                <div *ngIf="controlObjRef.errors.minlength ">minlength is {{controlObjRef.errors.minlength.requiredLength}} characters</div>
+            </div> -->
+            <div class=" alert alert-danger " *ngIf="controlObjRef.touched && !controlObjRef.valid">
+                <div *ngIf="controlObjRef.errors.required">FirstName is required</div>
+                <div *ngIf="controlObjRef.errors.minlength">minlength is {{controlObjRef.errors.minlength.requiredLength}} characters</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group ">
+        <label for="cars ">choose a car</label>
+        <select class="form-control " id="cars ">
+            <option *ngFor = "let car of cars " >{{car}}</option>
+        </select>
+    </div>
+
+    <div>
+        <button class="btn btn-primary " type="submit" [disabled]="!person.valid">submit</button>
+    </div>
+</form>

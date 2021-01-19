@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "..\\..\\..\\angular"
+		},
+		{
+			"path": "..\\.."
+		},
+		{
+			"path": "..\\..\\..\\AngularDeploy\\deploy-demo"
+		}
+	],
+	"settings": {}
+}

@@ -1,0 +1,23 @@
+<section class="user my-2 .textdark">
+    <button #temp (click)="getUser(temp)">user</button>
+    <input ngModel #tempvar='ngModel' name='create' type="text" (keyup.enter)='createUser(tempvar)'>
+    <!-- <div *ngIf="disp">
+    <ul>
+        <li *ngFor="let post of posts">
+            {{post.title}}
+            <button (click)="updateUser(post) ">update</button>
+            <button (click)="deleteUser(post) ">delete</button>
+        </li>
+    </ul>
+</div> -->
+
+    <div>
+        <ul>
+            <li *ngFor=" let post of posts " [routerLink]="['/user', post.id, post.title]">
+                {{post.title}}
+                <button (click)="updateUser(post) ">update</button>
+                <button (click)="deleteUser(post) ">delete</button>
+            </li>
+        </ul>
+    </div>
+</section>

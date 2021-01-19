@@ -1,0 +1,7 @@
+<p>form-array works!</p>
+<form action="">
+    <input type="text" class="form-control" (keyup.enter)="addCourse(course)" #course>
+    <ul class="list-group">
+        <li *ngFor="let course of courses.controls" class="list-group-item" (click)="remove(course)">{{course.value}}</li>
+    </ul>
+</form>

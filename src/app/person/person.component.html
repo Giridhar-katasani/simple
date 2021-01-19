@@ -1,0 +1,7 @@
+<p>{{name}}</p>
+
+<ul>
+    <li *ngFor="let item of personArray">{{item}}</li>
+</ul>
+
+<app-person-detail (personName)="addItem($event)"></app-person-detail>

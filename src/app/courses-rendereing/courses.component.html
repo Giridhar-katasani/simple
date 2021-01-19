@@ -1,0 +1,9 @@
+<form>
+    <div>
+        <label for="courses">courses</label>
+        <input ngModel type="text" name="courses" #course="ngModel" (keyUp.enter)="onClick(course)">
+    </div>
+    <div *ngFor="let course of courses">
+        <label>{{course}}</label>
+    </div>
+</form>

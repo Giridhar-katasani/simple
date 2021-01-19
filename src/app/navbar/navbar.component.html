@@ -1,0 +1,39 @@
+<!-- <nav class="navbar navbar-default">
+
+    <div class="container-fluid">
+
+
+
+        <ul class="nav navbar-nav">
+            <li class="active"><a routerLink="/heroForm">Followers</a></li>
+            <li><a routerLink="/user">Posts</a></li>
+        </ul>
+
+    </div>
+</nav> -->
+
+<div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <app-navbar-brand [brandName]="currentBrand"></app-navbar-brand>
+        <ul>
+            <!-- <a routerLink="/user"><button class="bg-success navbar-brand my-2 bg-primary btn btn-outline-light">User</button></a>
+            <a routerLink="/heroForm" ><button class="active bg-success navbar-brand my-2 bg-primary btn btn-outline-light">form</button></a> 
+            -->
+
+
+            <a routerLink="/user" [queryParams]="{page:1, order:'latest'}"><button class="navbar-brand my-2 bg-primary btn btn-outline-light"  [ngClass]="setUserClasses()" (click) = "onUserClick()">User</button></a>
+            <a routerLink="/heroForm"><button class="navbar-brand my-2 bg-primary btn btn-outline-light"  [ngClass]="setFormClasses()" (click) = "onFormClick()">form</button></a>
+            <!-- <li>
+            <a class="navbar-brand my-2 bg-primary btn btn-outline-light"  [ngClass]="setUserClasses()" routerLink="/user" (click) = "onUserClick()">user</a>
+            </li>
+            <li>
+             <a class="navbar-brand my-2 bg-primary btn btn-outline-light"  [ngClass]="setFormClasses()" routerLink="/heroForm" (click) = "onFormClick()">form</a>
+            </li> -->
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-light bg-success position-relative" type="submit">Search</button>
+        </form>
+    </nav>
+</div>
+<!-- <div>it works</div> -->
